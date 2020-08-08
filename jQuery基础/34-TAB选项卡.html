@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 960px;
+            height: 420px;
+            border: 1px solid #000000;
+            margin: 50px auto;
+        }
+        .nav>li{
+            list-style: none;
+            width: 240px;
+            height: 50px;
+            background: olivedrab;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+        .nav>.current{
+            background: #ccc;
+        }
+        .content>li{
+            list-style: none;
+            display: none;
+        }
+        .content>.show{
+            display: block;
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+             /*$(".nav>li").mouseenter(function () {
+                 // 1.1修改被移入选项卡的背景颜色
+                 $(this).addClass("current");
+                 // 1.2获取当前移入选项卡的索引
+                 var index = $(this).index();
+                 // 1.3根据索引找到对应的图片
+                 var $li = $(".content>li").eq(index);
+                 // 1.4显示找到的图片
+                 $li.addClass("show");
+
+             });
+             // 1.监听选项卡的移出事件
+             $(".nav>li").mouseleave(function () {
+                 // 1.1还原选项卡的背景颜色
+                 $(this).removeClass("current");
+                 // 1.2获取当前移出选项卡的索引
+                 var index = $(this).index();
+                 // 1.3根据索引找到对应的图片
+                 var $li = $(".content>li").eq(index);
+                 // 1.4隐藏对应的图片
+                 $li.removeClass("show");
+             });*/
+             $(".nav>li").mouseenter(function () {
+                 // 1.1修改被移入选项卡的背景颜色
+                $(this).addClass("current");
+                 //1.2还原其他兄弟选项卡的背景颜色
+                 $(this).siblings().removeClass("current");
+                 //1.3获取当前选项卡的索引
+                 var index=$(this).index();
+                 //1.4根据索引找到对应的图片
+                 var $li=$(".content>li").eq(index);
+                 //1.5隐藏其他兄弟图片
+                 $li.siblings().removeClass("show");
+                 //1.6显示当前的图片
+                 $li.addClass("show");
+             })
+
+         });
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul class="nav">
+        <li class="current">电视影音</li>
+        <li>厨卫嗨购</li>
+        <li>大牌秒杀</li>
+        <li>热爱烟灶</li>
+    </ul>
+    <ul class="content">
+        <li class="show"><img src="https://img14.360buyimg.com/babel/s960x370_jfs/t1/131327/7/2903/95376/5ef2e9daEafd9b1f7/279271dc73516449.jpg!cc_960x370" alt=""> </li>
+        <li><img src="https://img11.360buyimg.com/babel/s960x370_jfs/t1/119924/17/5605/121398/5ef33328Ef1938625/7acb72015aa68e82.jpg!cc_960x370" alt=""></li>
+        <li><img src="https://img13.360buyimg.com/babel/s960x370_jfs/t1/120390/34/5684/59744/5ef2da4cE6b381e4a/34a33a82e309c360.jpg!cc_960x370" alt=""></li>
+        <li><img src="https://img10.360buyimg.com/babel/s960x370_jfs/t1/114577/20/10886/182091/5ef307a9Eaa69f8fe/559c5d529fa175e6.jpg!cc_960x370" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>48-jQuery添加节点相关方法</title>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+             /*内部插入
+             append(content|fn)
+             appendTo(content)
+             作用：会将元素添加到指定元素内部的最后
+             prepend(content|fn)
+             prependTo(content)
+             作用：会将元素添加到指定元素内部的最前面
+             外部插入
+             after(content|fn)
+             作用：会将元素添加到指定元素外部的后面
+             before(content|fn)
+             会将元素添加到指定元素外部的前面
+             insertAfter(content)
+             insertBefore(content)*/
+             $("button").click(function () {
+                 var $li=$("<li>我是新增的li</li>");
+                 //$("ul").append($li);
+                 //$("ul").prepend($li);
+
+                 //$li.appendTo("ul");
+                 //$li.prependTo("ul");
+
+                 //$("ul").after($li);
+                 //$("ul").before($li);
+
+                 $li.insertAfter("ul");
+                 $li.insertBefore("ul");
+             });
+         })
+
+    </script>
+</head>
+<body>
+<button>添加节点</button>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+</ul>
+</body>
+</html>

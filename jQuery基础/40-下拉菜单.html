@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>40-下拉菜单</title>
+    <style>
+        *{
+             margin: 0;
+             padding: 0;
+        }
+        .nav{
+            width: 300px;
+            height: 50px;
+            background: #4a78c2;
+            margin: 100px auto;
+        }
+        .nav>li{
+            width: 100px;
+            height: 50px;
+            list-style: none;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+        }
+        .sub{
+            list-style: none;
+            background: #888888;
+            display: none;
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+             /*
+             在jQuery中如果执行动画，建议在执行动画之前先调用stop()方法，然后再执行动画
+              */
+            $(".nav>li").mouseenter(function () {
+                var $sub=$(this).children(".sub");
+                $sub.stop();
+                $sub.slideDown(1000);
+            })
+            $(".nav>li").mouseleave(function () {
+                var $sub=$(this).children(".sub");
+                $sub.stop();
+                $sub.slideUp(1000);
+            })
+         })
+    </script>
+</head>
+<body>
+<ul class="nav">
+    <li>女装
+        <ul class="sub">
+            <li>卫衣</li>
+            <li>连衣裙</li>
+            <li>衬衫</li>
+            <li>T恤</li>
+            <li>外套</li>
+            <li>牛仔裤</li>
+            <li>半身裙</li>
+        </ul>
+    </li>
+    <li>数码
+        <ul class="sub">
+            <li>冲锋衣</li>
+            <li>外套</li>
+            <li>T恤</li>
+            <li>牛仔裤</li>
+            <li>夹克</li>
+            <li>衬衫</li>
+            <li>工装</li>
+        </ul>
+    </li>
+    <li>家居
+        <ul class="sub">
+            <li>沙发</li>
+            <li>窗帘</li>
+            <li>花架</li>
+            <li>电脑桌</li>
+            <li>鞋柜</li>
+            <li>电视柜</li>
+            <li>茶几</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

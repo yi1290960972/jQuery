@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移入移出事件</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background:red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+             //mouseover/mouseout  子元素被移入移出也会触发父元素的事件
+            /*$(".father").mouseover(function () {
+                console.log("鼠标移入了");
+            })
+             $(".father").mouseout(function () {
+                 console.log("鼠标移出了");
+             })*/
+
+             //mouseenter/mouseleave 事件  子元素被移入移出不会触发父元素的事件
+             //注意：推荐使用下面的方法
+
+             /*$(".father").mouseenter(function () {
+                 console.log("鼠标移入了");
+             })
+             $(".father").mouseleave(function () {
+                 console.log("鼠标移出了");
+             })*/
+
+             $(".father").hover(function () {
+                 console.log("鼠标移入了");
+             },function () {
+                 console.log("鼠标移出了");
+             })
+
+             $(".father").hover(function () {
+                 console.log("鼠标移入移出了");
+             });
+         })
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>37-jQuery对联广告</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .left{
+            float: left;
+            position: fixed;
+            left: 0;
+            top: 200px;
+        }
+        .right{
+            float: right;
+            position: fixed;
+            right: 0;
+            top: 200px;
+        }
+        img{
+            display: none;
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+             //1.监听网页的滚动
+                $(window).scroll(function () {
+                    //1.1获取网页滚动的偏移位
+                    var offset=$("html,body").scrollTop();
+                    //1.2判断是否滚动到一定位置
+                    if(offset>500){
+                        $("img").show(1000);
+                    }else {
+                        $("img").hide(1000);
+                    }
+                });
+         })
+    </script>
+</head>
+<body>
+
+<img src="http://d.down.cljsgc.cn/down/js/duilian-528/images/duilian.jpg" class="left">
+<img src="http://d.down.cljsgc.cn/down/js/duilian-528/images/duilian.jpg" class="right">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>

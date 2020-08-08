@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+        window.onload=function(ev){
+            //1.通过原生JS入口函数可以得到dom元素
+            var img=document.getElementsByTagName('img')[0];
+            console.log(img);
+            //2.通过原生JS入口函数可以得到dom元素的宽高
+            var width=window.getComputedStyle(img).width;
+            console.log("onload",width);
+        }
+
+
+        /*
+        *1.原生JS和jQuery入口函数的加载模式不同
+        * 原生JS会等到DOM元素加载完毕，并且图片也加载完毕才执行
+        * jQuery会等到DOM元素加载完毕，但不会等到图片也加载完就执行
+        */
+
+
+        $(document).ready(function(){
+            //1.通过jQuery的入口函数可以得到DOM元素
+            var $img=$("img");
+            console.log($img);
+            //2.通过jQuery入口函数不可以得到dom元素的宽高
+            var $width=$img.width();
+            console.log("ready",$width);
+        });
+
+        /*
+        1.原生JS有多个入口函数，后面的会覆盖前面的
+        2.jQuery有多个入口函数，后面的不会覆盖前面的
+         */
+
+
+        window.onload=function(ev){
+            alert("Hello World1");
+        }
+        window.onload=function(ev){
+            alert("Hello World2");
+        }
+
+        $(document).ready(function(){
+            alert("Hello,World1");
+        });
+        $(document).ready(function(){
+            alert("Hello,World2");
+        });
+    </script>
+</head>
+<body>
+<img src="https://gw.alicdn.com/tfs/TB18VUYKxD1gK0jSZFsXXbldVXa-90-58.png" alt="">
+</body>
+</html>

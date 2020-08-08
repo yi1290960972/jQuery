@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>46-鼠标特效</title>
+    <style>
+        *{
+             margin: 0;
+             padding: 0;
+        }
+        ul{
+            list-style: none;
+            border: 1px solid #000;
+            margin: 100px auto;
+            width: 400px;
+            height: 250px;
+        }
+        ul>li{
+            width: 120px;
+            height: 100px;
+            float: left;
+            text-align: center;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        ul>li>img{
+            display: inline-block;
+            width: 70px;
+            height: 60px;
+
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+             $("li").mouseenter(function () {
+                $(this).children("img").animate({
+                    top:-50
+                },1000,function () {
+                   $(this).css("top", "50px");
+                    $(this).animate({top: 0},1000);
+                });
+             });
+         })
+    </script>
+</head>
+<body>
+<ul>
+    <li><img src="images/学习.png"><p>学习</p></li>
+    <li><img src="images/读书.png"><p>读书</p></li>
+    <li><img src="images/学生.png"><p>学生</p></li>
+    <li><img src="images/老师.png"><p>老师</p></li>
+    <li><img src="images/学历.png"><p>学历</p></li>
+    <li><img src="images/课表.png"><p>课表</p></li>
+</ul>
+</body>
+</html>

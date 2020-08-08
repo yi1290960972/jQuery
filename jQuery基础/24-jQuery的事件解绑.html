@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24-jQuery的事件解绑</title>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+             function test1 (){
+                 alert("hello zcy");
+             }
+             function test2(){
+                 alert("hello 1223");
+             }
+             $("button").click(test1);
+             $("button").click(test2);
+
+             $("button").mouseleave(function () {
+                 alert("mouseleave");
+             })
+             $("button").mouseenter(function () {
+                 alert("mouseenter");
+             })
+             //off()方法
+             // 如果不传参数，会移除所有事件
+             $("button").off();
+             //如果传一个参数，会移除所有指定类型的事件
+             $("button").off("click");
+             //如果传两个参数，会移除指定类型的指定事件
+             $("button").off("click",test1);
+         })
+    </script>
+</head>
+<body>
+<button>我是按钮</button>
+</body>
+</html>

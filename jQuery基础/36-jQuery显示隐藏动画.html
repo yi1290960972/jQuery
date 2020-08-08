@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>36-jQuery显示隐藏动画</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: #FF0000;
+            display: none;
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+            $("button").eq(0).click(function () {
+                //$("div").css("display","block");
+                //$("div").show("slow");
+                $("div").show("slow",function () {
+                    alert("显示动画执行完毕");
+                })
+            })
+            $("button").eq(1).click(function () {
+                //$("div").css("display","none");
+                //$("div").hide(1000);
+                $("div").hide(1000,function () {
+                    alert("隐藏动画执行完毕");
+                });
+            })
+            $("button").eq(2).click(function () {
+                $("div").toggle(1000);
+            })
+         })
+    </script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+</body>
+</html>

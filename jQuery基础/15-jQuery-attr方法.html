@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15</title>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+             /*  操作属性节点的方法
+
+             1.attr(name|pro|key,val|fn)
+             作用：获取或设置属性节点的值
+             一个参数，代表获取属性节点的值
+             两个参数，代表设置属性节点的值
+
+            注意点：
+            获取：无论找到多少个元素，只会返回第一个元素指定的属性节点的值
+            设置：找到的元素都设置
+            如果设置的属性节点不存在，那么系统会自动新增
+
+             2.removeAttr(name)
+             作用：删除属性节点
+              */
+
+             var $span=$("span");
+             //console.log($span.attr("class"));
+             //$span.attr("class","box");
+             //$span.attr("id","123");
+             $span.removeAttr("class");
+         })
+    </script>
+</head>
+<body>
+<span class="span1" name="zcy"></span>
+<span class="span2" name="zcy222"></span>
+</body>
+</html>

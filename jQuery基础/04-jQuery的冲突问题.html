@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04</title>
+    <script src="jQuery/jquery-3.4.1.min.js"></script>
+    <script>
+        /*1.释放$的使用权
+        注意点：释放操作必须写在其他jQuery代码之前
+        释放之后就不能再使用$,改为jQuery
+        jQuery.noConflict();
+         */
+
+        //2.自定义一个访问符号
+        var nj=jQuery.noConflict();
+        nj(function(){
+            alert("Hello");
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

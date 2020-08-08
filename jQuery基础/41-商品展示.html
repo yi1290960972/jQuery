@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>41-商品展示</title>
+    <style>
+        *{
+             margin: 0;
+             padding: 0;
+        }
+        .content{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+        }
+        .nav{
+            list-style: none;
+        }
+        .nav>li{
+
+            width: 100px;
+            height: 50px;
+            float: left;
+            text-align: center;
+        }
+        .nav_1{
+            list-style: none;
+        }
+        .nav_1>li{
+            display: block;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+        }
+        .sub{
+            width: 100px;
+            height: 50px;
+            border: 1px solid #000;
+            border-bottom: none;
+            position: absolute;
+            left: 100px;
+            right: 100px;
+            bottom: 0;
+            text-align: center;
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+                $(".sub").click(function () {
+                    $(".nav_1").slideUp(1000);
+                })
+         })
+    </script>
+</head>
+<body>
+<div class="content">
+    <ul class="nav">
+        <li>佳能
+            <ul class="nav_1">
+                <li>尼康</li>
+                <li>松下</li>
+                <li>卡西欢</li>
+            </ul>
+            <div>显示其他品牌</div>
+        </li>
+        <li>索尼
+            <ul class="nav_1">
+                <li>富士</li>
+                <li>可达</li>
+                <li>宾得</li>
+            </ul>
+        </li>
+        <li>三星
+            <ul class="nav_1">
+                <li>理光</li>
+                <li>奥林巴斯</li>
+                <li>明基</li>
+            </ul>
+        </li>
+        <div class="sub">隐藏所有内容</div>
+    </ul>
+</div>
+</body>
+</html>

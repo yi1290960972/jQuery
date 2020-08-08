@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>35-练习作业，焦点图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 960px;
+            height: 370px;
+            border: 1px solid #000000;
+            margin: 50px auto;
+            position: relative;
+        }
+        .content>li{
+            list-style: none;
+            display: none;
+        }
+        .content>.show{
+            display: block;
+        }
+        .son{
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+            float: right;
+        }
+        .nav{
+            list-style: none;
+        }
+        .nav>span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #cccccc;
+            text-align: center;
+            float: left;
+            margin: 8px;
+        }
+        .son>.nav>.current{
+            background: deeppink;
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+                $(".nav>span").mouseenter(function () {
+                    $(this).addClass("current");
+                    $(this).siblings().removeClass("current");
+                    var index=$(this).index();
+                    var $li=$(".content>li").eq(index);
+                    $li.siblings().removeClass("show");
+                    $li.addClass("show");
+                });
+         })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul class="content">
+        <li class="show"><img src="https://img14.360buyimg.com/babel/s960x370_jfs/t1/131327/7/2903/95376/5ef2e9daEafd9b1f7/279271dc73516449.jpg!cc_960x370" alt=""></li>
+        <li><img src="https://img11.360buyimg.com/babel/s960x370_jfs/t1/119924/17/5605/121398/5ef33328Ef1938625/7acb72015aa68e82.jpg!cc_960x370" alt=""></li>
+        <li><img src="https://img13.360buyimg.com/babel/s960x370_jfs/t1/120390/34/5684/59744/5ef2da4cE6b381e4a/34a33a82e309c360.jpg!cc_960x370" alt=""></li>
+        <li><img src="https://img10.360buyimg.com/babel/s960x370_jfs/t1/114577/20/10886/182091/5ef307a9Eaa69f8fe/559c5d529fa175e6.jpg!cc_960x370" alt=""></li>
+    </ul>
+    <div class="son">
+        <ul class="nav">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

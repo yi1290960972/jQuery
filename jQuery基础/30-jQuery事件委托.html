@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+         $(function () {
+            /*
+            什么是事件委托？
+            请别人帮忙做事情，然后将做完的事情反馈给我们
+             */
+             $("button").click(function () {
+                $("ul").append("<li>我是新增的li</li>");
+             })
+
+             /*
+             在jQuery中，如果通过核心函数找的的元素不止一个，
+             那么添加事件时，会给遍历找到的元素，都添加事件
+              */
+             /*$("ul>li").click(function () {
+                 console.log($(this).html());
+             })*/
+
+             /*
+             以下代码的含义，让ul帮li监听click事件
+             之所以能够监听，是因为入口函数执行的时候ul已经存在了，所以能够添加事件
+             之所以this是li，是因为我们点击的是li，而li没有click事件，
+             所以事件冒泡传递给了ul，ul响应了事件，既然事件是从li传递来的，所以必然知道this是谁
+              */
+              //事件委托    动态创建的要进行事件委托
+             /*$("ul").delegate("li","click",function () {
+                 console.log($(this).html());
+             })*/
+             //目前用on()方法
+             $("ul").on("click","li",function () {
+                 console.log($(this).html());
+             })
+
+
+         })
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+</ul>
+<button>新增一个li</button>
+</body>
+</html>

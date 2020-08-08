@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件自动触发</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background:red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            /*
+            1.什么是事件冒泡
+            2.如何阻止事件冒泡
+            3.什么是默认行为
+            4.如何阻止默认行为
+             */
+           $(".son").click(function (event) {
+                alert("son");
+
+            })
+            $(".father").click(function () {
+                alert("father");
+            })
+            //$(".father").trigger("click");
+            //$(".father").triggerHandler("click");
+
+            /*
+            trigger:  会触发事件冒泡
+            triggerHandle: 不会触发事件冒泡
+             */
+           // $(".son").trigger("click");
+           //$(".son").triggerHandler("click");
+
+            $("input[type='submit']").click(function () {
+                alert("submit")
+            })
+            /*
+            trigger:会触发默认行为
+            triggerHandler:不会触发默认行为
+             */
+            //$("input[type='submit']").trigger("click");
+            $("input[type='submit']").triggerHandler("click");
+
+            //思考题 想要a标签的事件自动触发，还有默认行为，则需要加一个span标签
+            /*$("a").click(function () {
+                alert("a");
+            })
+            $("a").trigger("click"); //并没有触发默认行为
+
+             */
+            $("span").click(function () {
+                alert("a");
+            })
+            $("span").trigger("click");
+        })
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com"><span>注册</span></a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+</body>
+</html>
