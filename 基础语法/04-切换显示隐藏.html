@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div style="display:block;">hello world</div>
+    <button>toggle</button>
+    <script>
+        $("button").click(function(){
+            var d = $("div").css("display")
+            if(d=="block"){
+                $("div").css("display","none")
+            }else{
+                $("div").css("display","block")
+            }
+        })
+    </script>
+</body>
+</html>

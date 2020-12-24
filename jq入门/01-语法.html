@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div id="app">hello world</div>
+    <script>
+        /* 1.jquery 支持所有的CSS选择器 */
+        let app = $("#app");
+        // jquery方法
+        app.click(function(){
+            $(this).css({
+                color:"red"
+            })
+        })
+        /* 原生js方法
+        var p = document.getElementById("app")
+        p.onclick=function(){
+            this.style.color="red"
+        } */
+    </script>
+</body>
+</html>

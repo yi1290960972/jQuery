@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+    <div class="head">
+        <a href="08-html.html">html</a>
+        <a href="08-css.html">css</a>
+    </div>
+    <div id="app">
+
+    </div>
+    <div class="footer">
+        footer
+    </div>
+    <script>
+        var htmls = ["08-html.html","08-css.html"]
+        $("#app").load(htmls[0])
+        $(".head a").click(function(){
+            $("#app").load(htmls[$(this).index()])
+            return false; 
+        })
+        
+    </script>
+</body>
+</html>

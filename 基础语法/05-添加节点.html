@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div>
+        <p>哈哈哈哈哈</p>
+    </div>
+    <!-- 
+        append() 方法在被选元素的结尾插入内容
+        prepend() 方法在被选元素的开头插入内容。
+        after() - 在被选元素之后插入内容
+        before() - 在被选元素之前插入内容
+     -->
+    <script>
+        var txt = $("<p></p>").text("我是在被选元素的结尾插入的")
+        $("div").append(txt)
+
+        var txt2 = $("<p></p>").text("我是在被选元素的开头添加的")
+        $("div").prepend(txt2)
+
+        var txt3 = $("<span></span>").text("我是在被选元素之后插入的")
+        $("div").after(txt3)
+
+        var txt4 = $("<span></span>").text("我是在被选元素之前插入的")
+        $("div").before(txt4)
+    </script>
+</body>
+</html>

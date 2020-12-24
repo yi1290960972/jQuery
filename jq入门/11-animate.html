@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 150px;
+            height: 30px;
+        }
+    </style>
+    <script src="lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // animate({style:value},time)
+
+        $("input").focus(function(){
+            $(this).animate({
+                width:"250px"
+            },1000)
+        }).blur(function(){
+            $(this).animate({
+                width:"150px"
+            },1000)
+        })
+    </script>
+</body>
+</html>

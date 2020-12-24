@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.2.1.js"></script>
+    <style>
+        body{
+            height: 1000px;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            background-color: red;
+            right: 10px;
+            bottom: 50px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        $(window).scroll(function(){
+            let scrollTop = $(window).scrollTop()
+            if(scrollTop>=300){
+                var opacity = 1
+            }else{
+                opacity = 0
+            }
+            $("div").css({
+                opacity:opacity
+            })
+        })
+         $("div").click(function(){
+             $(window).scrollTop(0)
+         })
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div id="div1">
+        <div id="child">hello world</div>
+    </div>
+    <button id="btn1">删除元素remove</button>
+    <button id="btn2">删除元素empty</button>
+    <!-- 
+        remove() - 删除被选元素（及其子元素）
+        empty() - 从被选元素中删除子元素
+     -->
+     <script>
+        $("#btn1").click(function(){
+            $("#div1").remove();
+        })
+        $("#btn2").click(function(){
+            $("#div1").empty();
+        })
+     </script>
+</body>
+</html>

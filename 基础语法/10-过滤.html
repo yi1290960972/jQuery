@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="item">
+            html
+        </div>
+        <div>css</div>
+    </div>
+    <script>
+      //  find方法
+      var item = $("#app").find(".item")
+      console.log(item);
+
+        // filter方法
+      var i = $("#app div").filter(".item")
+      console.log(i);
+    </script>
+</body>
+</html>

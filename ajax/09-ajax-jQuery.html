@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-ajax-jQuery</title>
+<!--    <script src="jquery-3.4.1.js"></script>-->
+    <script src="myAjax2.js"></script>
+    <script>
+        window.onload=function (ev) {
+            var oBtn=document.querySelector("button");
+            oBtn.onclick=function (ev1) {
+                /*
+                $.ajax({
+                    type: "GET",
+                    url: "09-ajax-jQuery.php",
+                    data: "userName=zcy&userPwd=1234",
+                    success: function(msg){
+                        alert(msg);
+                    },
+                    error:function (xhr) {
+                        alert(xhr.status);
+                    }
+                });
+                 */
+                ajax({
+                    url: "09-ajax-jQuery.php",
+                    data: {
+                        "userName": "zcy",
+                        "userPwd": "123456"
+                    },
+                    type:"get",
+                    timeout:3000,
+                    success:function(xhr) {
+                        alert(xhr.responseText);
+                    },
+                    error:function(xhr) {
+                        alert("请求失败");
+                    }
+                });
+            }
+        }
+    </script>
+
+</head>
+<body>
+<button>发送请求</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li>js</li>
+    </ul>
+    <script>
+        // each方法
+        // var arr = [1,2,3,4,5]
+        // $.each(arr,(index,value) =>{
+        //     console.log(index,value);
+        // })
+        // $("li").each((index,value)=>{
+        //     console.log($(value).text())
+        // })
+
+        $("li").map((index,value)=>{
+            console.log(value);
+        })
+
+
+        // map 方法
+        // var arr = [12,13,14,15]
+        // $.map(arr,function(value,index){
+        //     console.log(index,value)
+        // })
+
+    </script>
+</body>
+</html>

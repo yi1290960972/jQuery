@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>王者荣耀手风琴效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 769px;
+            height: 115px;
+            margin:200px auto;
+            background: url("./images2/header.png") no-repeat;
+            padding: 20px;
+        }
+        .img{
+            display: block;
+        }
+        ul{
+            list-style: none;
+        }
+
+        .box ul{
+            overflow: hidden;
+        }
+        .box li{
+            width: 69px;
+            height: 69px;
+            margin-right: 10px;
+            float: left;
+            position: relative;
+        }
+        .box .current{
+            width: 224px;
+        }
+        .box .current .big{
+            display: block;
+        }
+        .box .current .small{
+            display: none;
+        }
+        .big{
+            display: none;
+            width: 224px;
+        }
+        .small{
+            display: block;
+            position: absolute;
+            width: 69px;
+            height: 69px;
+            left: 0;
+            top: 0;
+            border-radius: 5px;
+        }
+
+    </style>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            $("li").mouseenter(function () {
+                //当前小li宽度变为224px，同时里面的小图片淡出，大图片淡入
+                $(this).stop().animate({
+                    width:224
+                }).find(".small").stop().fadeOut().siblings(".big").stop().fadeIn();
+                //其余兄弟小li宽度变为69px,小图片淡入，大图片淡出
+                $(this).siblings("li").stop().animate({
+                    width:69
+                }).find(".big").stop().fadeOut().siblings(".small").stop().fadeIn();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class="current">
+                <a href="#">
+                    <img src="./images2/01.jpg" alt="" class="small">
+                    <img src="./images2/1.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images2/02.jpg" alt="" class="small">
+                    <img src="./images2/2.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images2/03.jpg" alt="" class="small">
+                    <img src="./images2/3.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images2/04.jpg" alt="" class="small">
+                    <img src="./images2/4.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images2/05.jpg" alt="" class="small">
+                    <img src="./images2/5.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images2/06.jpg" alt="" class="small">
+                    <img src="./images2/6.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images2/07.jpg" alt="" class="small">
+                    <img src="./images2/7.png" alt="" class="big">
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

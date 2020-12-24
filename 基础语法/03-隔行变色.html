@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <style>
+        .red{
+            background: red;
+        }
+        .blue{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var li = $("li")
+        for(var i=0;i<li.length;i++){
+            if(i%2==0){
+                li[i].style.background = "pink"
+            }else{
+                li[i].style.background = "skyblue"
+            }
+        }
+    </script>
+</body>
+</html>
